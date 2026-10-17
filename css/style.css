@@ -257,3 +257,4 @@ button{font:inherit;cursor:pointer}
   .wa-float{bottom:74px;right:14px;width:48px;height:48px}
 }
 @media (max-width:600px){.hero{aspect-ratio:1/1}}
+@media (max-width:600px){.svc__grid{grid-template-columns:1fr;gap:12px}.svc__tile{height:170px}}
