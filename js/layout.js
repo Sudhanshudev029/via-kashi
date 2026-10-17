@@ -88,6 +88,8 @@
   document.querySelectorAll('.tabbar a').forEach(function (a) { if (a.getAttribute('data-tab') === here) a.classList.add('on'); });
   document.querySelectorAll('.desk-nav > ul > li > a').forEach(function (a) { if (a.getAttribute('href').split('#')[0] === here) a.classList.add('on'); });
 
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = wa(a.getAttribute('data-wa')); a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('[data-site]').forEach(function (n) { n.textContent = S[n.getAttribute('data-site')]; });
   var hd = q('#siteHeader');
   window.addEventListener('scroll', function () { hd.classList.toggle('stuck', window.scrollY > 4); }, { passive: true });
 })();

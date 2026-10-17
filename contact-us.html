@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us | Via Kashi Tours &amp; Travels</title>
+<meta name="description" content="Contact Via Kashi Tours &amp; Travels on WhatsApp or email to plan boat rides, cabs, hotels and tour packages in Varanasi.">
+<meta name="theme-color" content="#3b0d12">
+<link rel="icon" href="images/logo-mark.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<div data-slot="header"></div>
+<main id="main">
+<section class="phero"><div class="phero__img" style="background-image:url(images/ganga-golden-hour-boat.webp)"></div><div class="container phero__in">
+<div class="crumbs"><a href="index.html">Home</a><span>›</span>Contact Us</div>
+<h1>Contact Us</h1><p>Message us on WhatsApp — we reply with options and rates.</p>
+</div></section>
+<section class="sec"><div class="container"><div class="split" style="align-items:start">
+<form class="form" id="enq" novalidate>
+<h2 style="font-size:22px">Send an Enquiry</h2><small>This opens WhatsApp with your details filled in. Nothing is stored on this website.</small>
+<div class="two"><label>Your name<input name="name" required autocomplete="name"></label><label>Phone number<input name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label></div>
+<div class="two"><label>Service<select name="service"><option>Boat ride</option><option>Cab booking</option><option>Hotel stay</option><option>Tour package</option><option>Something else</option></select></label><label>Travel date<input name="date" type="date"></label></div>
+<label>Message<textarea name="msg" rows="4" placeholder="Group size, pickup point, anything we should know"></textarea></label>
+<div class="err" id="enqErr" role="alert"></div>
+<button class="btn btn--saffron" type="submit">Send on WhatsApp</button></form>
+<div class="cinfo"><h2 style="font-size:22px">Contact Details</h2>
+<div class="cinfo__i"><span class="ci">☎</span><div><b>WhatsApp</b><a data-wa="Hi Via Kashi" href="#"><span data-site="whatsappDisplay"></span></a></div></div>
+<div class="cinfo__i"><span class="ci">✉</span><div><b>Email</b><a id="mailA" href="#"><span data-site="email"></span></a></div></div>
+<div class="cinfo__i"><span class="ci">⌖</span><div><b>Address</b><span data-site="address"></span></div></div></div>
+</div></div></section>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('mailA').href='mailto:'+SITE.email;
+  document.getElementById('enq').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target,n=f.name.value.trim(),p=f.phone.value.replace(/[\s\-()]/g,''),er=document.getElementById('enqErr');
+    var ok=/^(\+91|91|0)?[6-9]\d{9}$/.test(p)||/^\+\d{8,15}$/.test(p);
+    if(n.length<2){er.textContent='Please enter your name.';return}
+    if(!ok){er.textContent='Please enter a valid phone number.';return}
+    er.textContent='';
+    var t='Hi Via Kashi, I would like to enquire.\nName: '+n+'\nPhone: '+f.phone.value.trim()+'\nService: '+f.service.value+(f.date.value?'\nDate: '+f.date.value:'')+(f.msg.value.trim()?'\nMessage: '+f.msg.value.trim():'');
+    window.open(waLink(t),'_blank','noopener');
+  });
+});
+</script>
+</main>
+<div data-slot="footer"></div>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+</body>
+</html>
