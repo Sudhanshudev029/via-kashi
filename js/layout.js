@@ -12,7 +12,7 @@
     { l: 'Hotels', href: 'hotels.html', sub: [['Hotels & Homestays', 'hotels.html']] },
     { l: 'Dev Dipawali', href: 'dev-dipawali.html', sub: [['Bajra Double Decker', 'dev-dipawali.html#bajra'], ['Cruise', 'dev-dipawali.html#cruise'], ['Motor Boat', 'dev-dipawali.html#motor']] },
     { l: 'Cab', href: 'cab.html', sub: [['Dzire', 'cab.html#dzire'], ['Innova Crysta', 'cab.html#innova'], ['Ertiga', 'cab.html#ertiga'], ['Tempo Traveller', 'cab.html#traveller']] },
-    { l: 'Boat', href: 'boat.html', sub: [['Motor Boat', 'boat.html#motor'], ['Bajra Boat', 'boat.html#bajra'], ['Dev Dipawali Boats', 'dev-dipawali.html'], ['Decorated Event Boats', 'boat.html#event']] },
+    { l: 'Boat', href: 'boat.html', sub: [['Motor Boat', 'boat.html#motor'], ['Cruise Boat', 'boat.html#cruise'], ['Bajra Boat', 'boat.html#bajra'], ['Dev Dipawali Boats', 'dev-dipawali.html'], ['Decorated Event Boats', 'boat.html#event']] },
     { l: 'Packages', href: 'packages.html' },
     { l: 'Things To Do', href: 'things-to-do.html', sub: [['Famous Temples & Ghats', 'things-to-do.html'], ['Local Food', 'things-to-do.html#food'], ['Festivals', 'things-to-do.html#festivals']] }
   ];
