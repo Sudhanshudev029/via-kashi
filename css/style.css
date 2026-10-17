@@ -298,7 +298,7 @@ button{font:inherit;cursor:pointer}
 .gal__b img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .45s}
 .gal__b:hover img{transform:scale(1.06)}
 .gal__b::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(59,13,18,.12);pointer-events:none}
-.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
 .steps li{counter-increment:s;position:relative;background:#fff;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:16px;padding:26px 24px 24px;display:grid;gap:8px}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff1de;color:var(--accent);font-weight:800;margin-bottom:4px}
 .steps b{font-size:17px;letter-spacing:-.02em}.steps span{color:var(--muted);font-size:14.5px;line-height:1.65}
