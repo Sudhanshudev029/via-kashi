@@ -258,3 +258,15 @@ button{font:inherit;cursor:pointer}
 }
 @media (max-width:600px){.hero{aspect-ratio:1/1}}
 @media (max-width:600px){.svc__grid{grid-template-columns:1fr;gap:12px}.svc__tile{height:170px}}
+
+.rail__count{display:none}
+@media (max-width:600px){
+  .row-sec__head{gap:10px}
+  .row-sec__head h2{flex:1}
+  .rail__count{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#fff1de;border:1px solid #f3d3a6;border-radius:999px;padding:3px 10px;white-space:nowrap}
+  .rail{scroll-snap-type:x mandatory;gap:12px;scroll-padding-left:4px;-webkit-overflow-scrolling:touch}
+  .card,.rail--lg .card{flex:0 0 100%;width:100%;scroll-snap-stop:always}
+  .card__img,.rail--lg .card__img{aspect-ratio:1/1;border-radius:14px}
+  .card h3{font-size:16px;margin-top:12px}
+  .card p{font-size:13.5px}
+}

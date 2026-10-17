@@ -9,7 +9,16 @@
     var cards = items.map(function (x) {
       return '<a class="card" href="' + sec.dataset.href + '"><div class="card__img"><img src="images/' + x.img + '.webp" alt="' + x.t.replace(/"/g, '') + '"></div><h3 title="' + x.t.replace(/"/g, '') + '">' + x.t + '</h3>' + (noPrice ? '' : '<p>Price on <b>request</b></p>') + '</a>';
     }).join('');
-    sec.innerHTML = '<div class="row-sec__head"><h2>' + sec.dataset.title + '</h2><a href="' + sec.dataset.href + '" aria-label="View all">' + arrow + '</a></div><div class="rail' + (lg ? ' rail--lg' : '') + '">' + cards + '</div>';
+    sec.innerHTML = '<div class="row-sec__head"><h2>' + sec.dataset.title + '</h2><span class="rail__count" aria-hidden="true">1 / ' + items.length + '</span><a href="' + sec.dataset.href + '" aria-label="View all">' + arrow + '</a></div><div class="rail' + (lg ? ' rail--lg' : '') + '">' + cards + '</div>';
+  });
+
+  /* phone: one card per view, with a "n / total" counter that follows the swipe */
+  document.querySelectorAll('.row-sec').forEach(function (sec) {
+    var rail = sec.querySelector('.rail'), count = sec.querySelector('.rail__count'), total = rail.children.length;
+    rail.addEventListener('scroll', function () {
+      var step = rail.children[1] ? rail.children[1].offsetLeft - rail.children[0].offsetLeft : rail.clientWidth;
+      count.textContent = Math.min(total, Math.round(rail.scrollLeft / step) + 1) + ' / ' + total;
+    }, { passive: true });
   });
 
   /* hero carousel */
