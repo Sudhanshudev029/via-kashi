@@ -61,24 +61,10 @@ button{font:inherit;cursor:pointer}
 .btn--white{background:#fff;color:#0f7a4a}
 
 /* ---------- hero ---------- */
-.hero{position:relative;margin:12px 20px 0;height:668px;border-radius:20px;overflow:hidden;background:#2b0a0e;color:#fff;isolation:isolate}
+.hero{position:relative;margin:12px 20px 0;height:clamp(420px,50vw,720px);border-radius:20px;overflow:hidden;background:#2b0a0e;color:#fff;isolation:isolate}
 .hero__slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
 .hero__slide.on{opacity:1;visibility:visible}
-.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center right;z-index:-2}
-.hero__slide::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(32,8,10,.97) 0%,rgba(43,10,14,.92) 38%,rgba(59,13,18,.55) 68%,rgba(90,20,26,.3) 100%)}
-.hero__in{height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 52px 0 64px;max-width:900px}
-.hero__badge{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f4c777;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:999px;margin-bottom:20px}
-.hero h2{font-size:clamp(40px,5.6vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.04}
-.hero h2 em{display:block;font-style:normal;color:#f4a340;font-size:.62em;margin-top:8px}
-.hero p.lead{font-size:20px;line-height:1.45;margin-top:18px;max-width:520px;opacity:.9}
-.hero__feat{display:flex;gap:0;margin-top:30px}
-.hero__feat li{padding:0 22px;border-left:1px solid rgba(255,255,255,.2);font-size:13px;line-height:1.35;text-align:center;opacity:.92;min-width:128px}
-.hero__feat li:first-child{border-left:0;padding-left:0;text-align:left}
-.hero__feat svg{display:block;margin:0 auto 8px;color:#f4a340}.hero__feat li:first-child svg{margin-left:0}
-.hero__cta{align-self:flex-start;margin-top:34px;background:linear-gradient(100deg,#e87516,#c9560f);color:#fff;padding:16px 34px;border-radius:999px;font-weight:700;font-size:17px;box-shadow:0 10px 30px rgba(232,117,22,.35);transition:transform .2s,box-shadow .2s}
-.hero__cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(232,117,22,.5)}
-.hero__trust{display:flex;align-items:center;gap:16px;margin-top:30px;font-size:13px;opacity:.85}
-.hero__trust b{font-size:22px;letter-spacing:-.03em}.hero__trust i{width:1px;height:26px;background:rgba(255,255,255,.3)}
+.hero__slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pd,center)}
 .hero__arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;z-index:3;transition:background .2s}
 .hero__arrow:hover{background:rgba(255,255,255,.34)}.hero__arrow--l{left:16px}.hero__arrow--r{right:16px}
 .hero__dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
@@ -87,6 +73,7 @@ button{font:inherit;cursor:pointer}
 
 /* ---------- services ---------- */
 .svc{padding:10px 0 0}
+.pill--brand{text-transform:none!important;letter-spacing:.02em!important;font-size:13px!important}
 .pill{display:inline-flex;align-items:center;gap:6px;background:#fff1de;border:1px solid #f3d3a6;color:#b94a0c;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
 .svc h2{font-size:32px;font-weight:800;letter-spacing:-.035em;margin:12px 0 22px;line-height:1.2}
 .svc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -253,9 +240,9 @@ button{font:inherit;cursor:pointer}
   :root{--gutter:16px;--head-h:62px}
   .desk-nav{display:none}.burger{display:flex}
   .logo img{width:38px;height:38px}.logo__txt b{font-size:21px}
-  .hero{margin:8px 10px 0;height:520px;border-radius:16px}
-  .hero__in{padding:0 22px}.hero__feat{display:none}.hero p.lead{font-size:16px}
-  .hero__arrow{display:none}.hero__trust{display:none}
+  .hero{margin:8px 10px 0;height:auto;aspect-ratio:16/10;border-radius:16px}
+  .hero__slide img{object-position:var(--pm,center)}
+  .hero__arrow{display:none}
   .svc__grid{grid-template-columns:repeat(2,1fr)}.svc__tile{height:150px}.svc h2{font-size:24px}
   .row-sec{padding-top:40px}.row-sec__head h2{font-size:17px;line-height:1.3;padding-right:12px}
   .card,.rail--lg .card{flex-basis:168px;width:168px}.rail{gap:12px}
@@ -269,3 +256,4 @@ button{font:inherit;cursor:pointer}
   .tabbar a.on{color:var(--accent)}
   .wa-float{bottom:74px;right:14px;width:48px;height:48px}
 }
+@media (max-width:600px){.hero{aspect-ratio:1/1}}
