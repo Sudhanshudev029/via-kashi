@@ -7,7 +7,7 @@
   document.querySelectorAll('[data-row]').forEach(function (sec) {
     var items = D[sec.dataset.row] || [], lg = sec.dataset.lg, noPrice = sec.dataset.noprice;
     var cards = items.map(function (x) {
-      return '<a class="card" href="' + sec.dataset.href + '"><div class="card__img"><img src="images/' + x.img + '.webp" alt="' + x.t.replace(/"/g, '') + '"></div><h3 title="' + x.t.replace(/"/g, '') + '">' + x.t + '</h3>' + (noPrice ? '' : '<p>Price on <b>request</b></p>') + '</a>';
+      return '<a class="card" href="' + sec.dataset.href + '"><div class="card__img"><img src="images/' + x.img + '.webp" alt="' + x.t.replace(/"/g, '') + '"></div><h3 title="' + x.t.replace(/"/g, '') + '">' + x.t + '</h3>' + (noPrice ? '' : '<p>' + D.priceHtml(x) + '</p>') + '</a>';
     }).join('');
     sec.innerHTML = '<div class="row-sec__head"><h2>' + sec.dataset.title + '</h2><span class="rail__count" aria-hidden="true">1 / ' + items.length + '</span><a href="' + sec.dataset.href + '" aria-label="View all">' + arrow + '</a></div><div class="rail' + (lg ? ' rail--lg' : '') + '">' + cards + '</div>';
   });
